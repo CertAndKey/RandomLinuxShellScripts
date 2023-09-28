@@ -15,7 +15,6 @@ fi
 
 tshark -r $1 -T fields -e ip.addr > ips.txt
 sort ips.txt | uniq > ips_no_dupe.txt
-sed -i 's/192.168.200.164//g' ips_no_dupe.txt
 #sed -i 's/<ip_to_filter>//g' ips_no_dupe.txt
 sed -i 's/,//g' ips_no_dupe.txt
 rm ips.txt
